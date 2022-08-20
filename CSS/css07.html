@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS07</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            list-style: none;
+            text-decoration: none;
+            padding: 0 2px;
+        }
+
+        h1.shadow {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 20px 15px;
+            color: yellow;
+            background-image: url("image/backgrd.png");
+            font-size: 25px;
+            text-shadow: 5px 2px 4px red;
+        }
+
+        .nav {
+            background: #049473;
+            display: flex;
+            padding-left: 0 15px;
+            height: 2em;
+            line-height: 2em;
+            justify-content: space-around;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            padding-right: 2.1em;
+            color: #83C9B8;
+            font-size: 20px;
+        }
+
+        .menu li>a:hover {
+            color: #e32879;
+        }
+
+        .menu-link {
+            position: relative;
+        }
+
+        .menu_down {
+            background: #049473;
+            width: 130px;
+            height: 12em;
+            margin: 0 auto;
+            position: absolute;
+            line-height: 3em;
+            top: 1.6em;
+            left: 0;
+            display: none;
+            transition: all .2s ease-out;
+        }
+
+        .menu_down li {
+            text-align: center;
+            padding: 0px;
+        }
+        .menu_down li >a {
+            color: #E7F5F2;
+        }
+        .menu>.menu-link:hover>.menu_down {
+            display: block;
+        }
+
+        .main-content {
+            display: inline-flex;
+            width: 100%;
+        }
+        h2.category-title
+        {
+            margin: 15px 0 ;
+            font-size: 20px;
+        }
+        .category {
+            width: 21%;
+            background-color: cyan;
+        }
+
+        .category>.category-title {
+            text-align: center;
+            padding: 12px 0;
+            color: white;
+            background-color: blue;
+        }
+
+        .category>ul {
+            margin: 15px 0;
+            text-indent: 20px;
+        }
+
+        .content {
+            margin: 0 20px;
+            width: inherit;
+            text-align: justify;
+            overflow: scroll;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 300px;
+        }
+
+        .content>.paragraph {
+            overflow: scroll;
+        }
+
+        .content>.paragraph>div {
+            margin: 20px;
+        }
+
+        .content>tbody>tr>.paragraph>div {
+            overflow: scroll;
+        }
+
+        .advertisements {
+            width: 25%;
+            background-color: #C5EFF7;
+        }
+        .advertisement
+        {
+            background-color: #FFF9DE;
+        }
+
+        .advertisements>.advertisement {
+            padding: 40px 0;
+            text-align: center;
+            background-color: bisque;
+            margin: 25px 0;
+            border-radius: 50px;
+            border: 2px solid black;
+        }
+        .fotter
+        {
+            background-color: blue;
+            width: 100%;
+            height: 46px;
+        }
+        .fotter>.content-1 >p
+        {
+            color: yellow;
+            text-align: center;
+           padding: -2px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="shadow">Diễn đàn công nghệ thông tin</h1>
+        </header>
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+
+                <li class="menu-link">
+                    <a href="dropbtn">Tin Tức</a>
+                    <ul class="menu_down">
+                        <li><a href="#">Công nghệ</a></li>
+                        <li><a href="#">Phần mềm</a></li>
+                        <li><a href="#">Phần cứng</a></li>
+                        <li><a href="#">Việc làm</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="category">
+                <h2 class="category-title">Ngôn ngữ lâp trình</h2>
+                <ul>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                </ul>
+                <h2 class="category-title">Cơ Sở dữ liệu</h2>
+                <ul>
+                    <li>Access</li>
+                    <li>SQL Servel</li>
+                    <li>MySQL</li>
+                    <li>Oracle</li>
+                    <li>PostgreSQl</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="paragraph">
+                    <div>
+                        Zalo là một ứng dụng liên lạc miễn phí được nhiều người sử dụng và đánh giá cao. Ứng dụng
+                        này mang
+                        đến cho người dùng rất nhiều tiện ích cũng như những tính năng thú vị. Một trong số đó là
+                        việc hiển
+                        thị thời gian truy cập của người khác. Việc biết được thời gian truy cập của người khác sẽ
+                        giúp bạn
+                        thuận tiện hơn khi sắp xếp thời gian để liên lạc. Nếu bạn đang gặp phải tình trạng không
+                        hiển thị
+                        thời gian truy cập trên Zalo. Thì những thông tin trong bài viết này chắc chắn sẽ giúp bạn
+                        khắc phục
+                        vấn đề này.Điều mà Zalo làm được không chỉ dừng lại ở việc hoàn thiện ứng dụng, mà còn ở
+                        việc quảng bá
+                        và tiếp cận người dùng Việt Nam. Ở những thời điểm đầu tiên Zalo đã tung ra rất nhiều chiến
+                        lược quảng
+                        bá đến người dùng Việt Nam. Kết quả là theo số liệu vào năm 2018 số lượng người dùng Zalo đã
+                        đạt mốc 100
+                        triệu người dùng.Điều này chúng ta có thể hiểu rằng, Zalo đã và đang tạo được tiếng vang
+                        lớn, tạo nền móng vững chắc
+                        trong lòng người dùng Việt Nam.Mã QR có một “ quyền năng ” vô hạn nếu như bạn biết sử dụng
+                        hợp lý trong
+                        việc thu hút lượng người quan tâm. Mỗi Zalo OA đều có mã QR riêng, khi scan mã QR, người
+                        dùng sẽ được
+                    </div>
+                </div>
+
+                <div class="paragraph">
+                    <div>Zalo là một ứng dụng liên lạc miễn phí được nhiều người sử dụng và đánh giá cao. Ứng dụng
+                        này mang
+                        đến cho người dùng rất nhiều tiện ích cũng như những tính năng thú vị. Một trong số đó là
+                        việc hiển
+                        thị thời gian truy cập của người khác. Việc biết được thời gian truy cập của người khác sẽ
+                        giúp bạn
+                        thuận tiện hơn khi sắp xếp thời gian để liên lạc. Nếu bạn đang gặp phải tình trạng không
+                        hiển thị
+                        thời gian truy cập trên Zalo. Thì những thông tin trong bài viết này chắc chắn sẽ giúp bạn
+                        khắc phục
+                        vấn đề này.Điều mà Zalo làm được không chỉ dừng lại ở việc hoàn thiện ứng dụng, mà còn ở
+                        việc quảng bá
+                        và tiếp cận người dùng Việt Nam. Ở những thời điểm đầu tiên Zalo đã tung ra rất nhiều chiến
+                        lược quảng
+                        bá đến người dùng Việt Nam. Kết quả là theo số liệu vào năm 2018 số lượng người dùng Zalo đã
+                        đạt mốc 100
+                        triệu người dùng.Điều này chúng ta có thể hiểu rằng, Zalo đã và đang tạo được tiếng vang
+                        lớn, tạo nền móng vững chắc
+                        trong lòng người dùng Việt Nam.Mã QR có một “ quyền năng ” vô hạn nếu như bạn biết sử dụng
+                        hợp lý trong
+                        việc thu hút lượng người quan tâm. Mỗi Zalo OA đều có mã QR riêng, khi scan mã QR, người
+                        dùng sẽ được</div>
+                </div>
+
+                <div class="paragraph">
+                    <div>
+                        Thanh tra Sở Thông tin và Truyền thông tỉnh Hậu Giang Công bố Quyết định Thanh tra Mobifone
+                        Hậu Giang về
+                        quản lý thông tin thuê bao di động và công trình hạ tầng kỹ thuật viễn thông thụ động, trạm
+                        thu phát
+                        sóng thông tin di động ngày 12/3/2020, Thanh tra Sở Thông tin và Truyền thông Hậu Giang ký
+                        ban hành Quyết địnhh xử phạt vi phạm
+                        hành chính đối với bà N.T.H do đăng tải lên facebook cá nhân thông tin sai sự thật với nội
+                        dung “Lạc Tỷ
+                        có người nhiễm virus Corona ùi sợ quá chắc nghỉ làm thôi”. Nội dung này đã gây hoang man dư
+                        luận xã hội
+                        trong tình hình dịch bệnh Covid-19 gây ra. Đây là trường hợp thứ hai mà Thanh tra Sở Thông
+                        tin và Truyền
+                        thông Hậu Giang ra quyết định xử phạt.Bộ Thông tin và Truyền vừa tổ chức Hội nghị trực tuyến
+                        tổng kết
+                        thanh tra diện rộng quản lý thông tin thuê bao di động. Ông Đỗ Hữu Trí, Phó Chánh Thanh tra
+                        Bộ Thông tin
+                        và Truyền thông, ông Lê Văn Tuấn, Phó Cục trưởng Cục Viễn thông và ông Nguyễn Khắc Lịch -
+                        Phó Cục trưởng
+                        Cục An toàn thông tin cùng chủ trì hội nghị.
+                    </div>
+                </div>
+
+                <div class="paragraph">
+                    <div>
+                        Thanh tra Sở Thông tin và Truyền thông tỉnh Hậu Giang Công bố Quyết định Thanh tra Mobifone
+                        Hậu Giang về
+                        quản lý thông tin thuê bao di động và công trình hạ tầng kỹ thuật viễn thông thụ động, trạm
+                        thu phát
+                        sóng thông tin di động ngày 12/3/2020, Thanh tra Sở Thông tin và Truyền thông Hậu Giang ký
+                        ban hành Quyết địnhh xử phạt vi phạm
+                        hành chính đối với bà N.T.H do đăng tải lên facebook cá nhân thông tin sai sự thật với nội
+                        dung “Lạc Tỷ
+                        có người nhiễm virus Corona ùi sợ quá chắc nghỉ làm thôi”. Nội dung này đã gây hoang man dư
+                        luận xã hội
+                        trong tình hình dịch bệnh Covid-19 gây ra. Đây là trường hợp thứ hai mà Thanh tra Sở Thông
+                        tin và Truyền
+                        thông Hậu Giang ra quyết định xử phạt.Bộ Thông tin và Truyền vừa tổ chức Hội nghị trực tuyến
+                        tổng kết
+                        thanh tra diện rộng quản lý thông tin thuê bao di động. Ông Đỗ Hữu Trí, Phó Chánh Thanh tra
+                        Bộ Thông tin
+                        và Truyền thông, ông Lê Văn Tuấn, Phó Cục trưởng Cục Viễn thông và ông Nguyễn Khắc Lịch -
+                        Phó Cục trưởng
+                        Cục An toàn thông tin cùng chủ trì hội nghị.
+                    </div>
+                </div>
+            </div>
+
+            <div class="advertisements">
+                <div class="advertisement">
+                      1
+                </div>
+                <div class="advertisement">
+                     2
+                </div>
+                <div class="advertisement">
+                    3
+                </div>
+            </div>
+        </div>
+        <div class="fotter">
+            <foote class="content-1">
+               <p> Copyright 2019</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

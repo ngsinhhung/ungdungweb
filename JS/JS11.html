@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS011</title>
+</head>
+<script>
+    function zoompic() {
+        var checkimg = document.getElementsByName('zoom');
+        var zoomimg = -1;
+        for (var i = 0; i < checkimg.length; i++) {
+            if (checkimg[i].checked) {
+                zoomimg = checkimg[i].value;
+                break;
+            }
+            else
+                continue;
+        }
+        if (zoomimg == '0') {
+            document.getElementById("rec").style.width = "10%";
+        }
+        else if (zoomimg == '1') {
+            document.getElementById('rec').style.width = "25%";
+        }
+        else if (zoomimg == '2') {
+            document.getElementById('rec').style.width =  "50%";
+        }
+    }
+</script>
+
+<body>
+    <h1>Image Resizing</h1>
+    <hr>
+    <label>Slace</label>
+    <input type="radio" name="zoom" value="0" onchange="zoompic()" checked />10%
+    <input type="radio" name="zoom" value="1" onchange="zoompic()" />25%
+    <input type="radio" name="zoom" value="2" onchange="zoompic()" />50%
+    <br><br>
+    <img src="/images/bando.jpg" alt="hinhanh" id="rec" />
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 400px;
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        td{
+            border: 1px solid black;
+            padding: 5px;
+        } 
+        button{
+            margin: 15px 15px 15px 25px;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <h2> Chương trình tính tuổi</h2>
+        <table>
+            <form action="" method="post">
+                <tr>
+                    <td>Nhập vào tên bạn:</td>
+                    <td>
+                        <input type="text" name="username" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nhập vào năm sinh:</td>
+                    <td>
+                        <input type="text" name="age" id="age">
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <button> Tính tuổi</button>
+        <p id="name"></p>
+        <p id="old"></p>
+        <script>
+            const inpname=document.querySelector('#username')
+            const inpage=document.querySelector('#age')
+            const btn=document.querySelector('button')
+            const name=document.querySelector('#name')
+            const old =document.querySelector('#old')
+            btn.addEventListener('click', function(){
+                const currentYear = new Date().getFullYear()
+                const birthYear = Number(inpage.value)
+                const ten=String(inpname.value)
+                const age = currentYear - birthYear
+                name.innerHTML=` Chào bạn ${ten} !`
+                old.innerHTML =`Tuổi của bạn là ${age}`
+            })
+        </script>
+</body>
+</html>

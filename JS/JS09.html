@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nhập vào số phần tử:</label>
+    <input type="number"  id="number" />
+    <br><br>
+    <input type="button" value="Tạo mảng" onclick="Create()" />
+    <input type="button" value="Xếp mảng tắng dần" onclick="AscSort()" />
+    <input type="button" value="Xếp mảng giảm dần" onclick="DescSort()" />
+    <p id="create">  </p>
+    <p id="ascsort"> </p>
+    <p id="descsort"> </p>
+</body>
+<script>
+     var array = new Array(0);
+    function Create() {
+        var length = parseInt(document.getElementById('number').value);
+        array = Array.from({ length: length }, () => Math.floor(Math.random() * 10));
+        document.getElementById("create").innerHTML="Mảng ban đầu: "+ array;
+    }
+    function compareAsc(a, b) {
+        return a - b;
+    }
+    function AscSort()
+    {
+        var ascsort = array.sort(compareAsc);
+        document.getElementById("ascsort").innerHTML =" Mảng tăng dần: "+ ascsort;
+    }
+    function compareDesc(a, b) {
+        return b - a;
+    }
+    function DescSort()
+    {
+        var descsort = array.sort(compareDesc);
+        document.getElementById("descsort").innerHTML =" Mảng giảm dần: "+ descsort;
+    }
+
+
+</script>
+</html>

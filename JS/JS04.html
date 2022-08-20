@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            
+            margin: auto;
+            margin-top: 50px;
+            width: 600px;
+            border: 1px solid grey;
+            border-collapse:collapse ;
+        }
+        td{
+            border: 2px solid grey;
+            height: 30px;
+            width: 200px;
+            padding: 5px;
+        }
+        thead{
+            font-size: 25px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <table >
+        <form action="/" method="post">
+            <thead>
+                <tr>
+                    <th colspan="2" class="tittle"> CÁC PHÉP TÍNH TOÁN HỌC</th> 
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> Số thứ 1: </td>
+                <td>
+                <input type="number" id="number1">
+                </td>
+            </tr>
+            <tr>
+                <td> Số thứ 2: </td>
+                <td>
+                <input type="number" id="number2">
+                </td>
+            </tr>
+            <tr>
+                <td> Chọn phép toán: </td>
+                <td>
+                    <input type="radio" id="cong" name="so" value="cộng">
+                    <label for="cong">Cộng</label> <br>
+                    <input type="radio" id="tru" name="so" value="trừ">
+                    <label for="tru">Trừ</label> <br>
+                    <input type="radio" id="nhan" name="so" value="nhân">
+                    <label for="nhan">Nhân</label> <br>
+                    <input type="radio" id="chia" name="so" value="chia">
+                    <label for="chia">Chia</label> <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="button" id="thuchien"  value="Thực hiện" onclick="Solve()">
+                </td>
+                <td>
+                    <input type="text" id="result" value="" readonly>
+                </td>
+            </tr>
+        </tbody>
+        </form>
+    </table>
+    <script>
+         function Print(result) {
+        document.getElementById('result').value = result;
+    }
+        function Solve(){
+            var num1 =document.getElementById("number1").value;
+            var num2 =document.getElementById("number2").value;
+            num1=parseInt(num1);
+            num2=parseInt(num2);
+            var so = '';
+            var options = document.getElementsByName('so');
+            for (var i = 0; i < options.length; i++) {
+            if (options[i].checked) { // kiem tra cai nao dc check
+                so = options[i].value;
+                break;
+            }
+            else
+                continue;
+        }
+        switch (so) {
+            case 'cộng': //Cong
+                Print(num1 + num2);
+                break;
+            case 'trừ': //Tru
+                Print(num1 - num2);
+                break;
+            case 'nhân': //Nhan
+                Print(num1 * num2);
+                break;
+            case 'chia': //Chia
+                if (num2 == 0)
+                    alert("Bao loi");
+                else
+                    Print(num1 / num2);
+                break;
+            default: // -1 loi hoac chua chon
+                alert("Choose one!");
+        }
+    }
+    </script>
+    
+</body>
+</html>

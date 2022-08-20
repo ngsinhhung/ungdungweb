@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var month, year;
+    const get_day_of_month = (year, month) => {
+      return new Date(year, month, 0).getDate();
+    };
+    month=prompt("Nhập tháng")
+    year=prompt("Nhập năm",2000)
+    document.write("<B> Tháng " + month  + "</B>");
+    document.write("<B> Năm " +  year  + "</B>");
+    document.write("<B> có " +  get_day_of_month( year,month) + " ngày </B>");
+  </script>
+  <br>
+  <p id="today"></p>
+  <p id="hour"></p>
+  <button>Xem ngày giờ</button>
+  <script>
+        const btn=document.querySelector('button')
+        const today=document.querySelector('#today')
+        const hour=document.querySelector('#hour')
+        btn.addEventListener('click', function(){
+      const d = new Date();
+      const nam = d.getFullYear();
+      const thang = d.getMonth() + 1 ;
+      const ngay =d.getDate();
+      const thu = d.getDay() + 1 ;
+      const gio = d.getHours();
+      const phut = d.getMinutes();
+      const giay = d.getSeconds(); 
+      today.innerHTML=` <B>Hôm nay, thứ ${thu} ngày ${ngay}/${thang}/${nam} </B>`
+      hour.innerHTML=`<B>${gio}:${phut}:${giay}</B>`
+    })
+  </script>
+  
+</body>
+</html>

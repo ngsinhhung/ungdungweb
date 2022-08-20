@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 09</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+        }
+        .left, .right {
+            width: 50%;
+            margin: 15px;
+            background-color: antiquewhite;
+            min-height: 300px;
+        }
+        .right {
+            line-height: 300px;
+        }
+        #view {
+            text-align: center;
+            font-size: 5em;
+            color: blue; /*tương tự màu mặc định trong phần tử input type="color" */
+            font-weight: bold;
+        }
+        fieldset {
+            font-size: 1.2em;
+            border: 2px solid blue;
+        }
+
+        ol li {
+            line-height: 30px;
+            padding-left: 20px;
+            background-color: #9FF;
+        }
+        ol li:nth-child(odd) {
+            background-color: #969;
+        }
+        .shadow { /*chưa sử dụng */
+            text-shadow:  7px 7px 5px gray;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            var arr=[]; //mảng chứa các item bị xoá để có thể phục hồi
+            //click lên phần tử nào, chuỗi đó hiện lên bảng bên khung phải
+            $("ol>li").click(function() {
+                $("#view").text($(this).text());
+            });
+            //click lên radio id="no"
+            $("no").click(function() {
+                $("#view").removeClass("shadow");
+            });
+            //click lên radio id="yes"
+            $("#yes").click(function() {
+                $("#view").addClass("shadow");
+            });
+            //thay đổi màu chữ
+            $("#textcolor").change(function() {
+                $("#view").css("color", $(this).val());
+            });
+            //click button xoá phần tử cuối
+            $("#btDel").click(function() {
+                var text = $("ol li:last").text();
+                if(text == "") return;
+                arr.unshift(text);//thêm chuỗi bị xoá váo danh sách arr
+                $("ol li:last").remove(); //xoá <li> cuối
+            });
+            //xử lý button phục hồi
+            $("#btUndo").click(function() {
+                if(arr.length == 0) return; //danh sách rỗng không xử lí
+                var item = "<li>" + arr.shift() + "</li>"; //tạo phần tử <li> với chuỗi lấy ở đầu danh sách
+                $("ol").append(item); //thêm vào cuối <ol>
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <fieldset>
+                <legend>Chọn</legend>
+                <p>
+                    <input type="radio" name="shadow" id="no" checked>Chữ bình thường
+                    <br>
+                    <input type="radio" name="shadow" id="yes">Chữ có bóng<br>
+                </p>
+                <p>
+                    Chọn màu chữ:<input type="color" id="textcolor" value="#0000ff">
+                    <p>
+                        <button id="btDel">Xoá phần tử cuối</button>
+                        <button id="btUndo">Phục hồi</button>
+                    </p>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Click vào một chuỗi</legend>
+                <ol id="list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JQUERY</li>
+                    <li>JAVASCRIPT</li>
+                </ol>
+            </fieldset>
+        </div>
+        <div class="right">
+            <div id="view">HTML</div>
+        </div>
+    </div>
+</body>
+</html>

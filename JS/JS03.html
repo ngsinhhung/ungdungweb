@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h2,h3{
+            text-align: center;
+        }
+        table {
+            width: 450px;
+            height: 150px;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: auto;
+            background-color: rgba(246, 246, 138, 0.736);
+        }
+        td{
+            width: 50px;
+            border: 1px solid black;
+            padding: 15px;
+        }
+        div{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2> CHƯƠNG TRÌNH GIẢI PHƯƠNG TRÌNH BẬC 2</h1>
+    <h3>ax<sup>2</sup> +bx +c = 0</h3>
+    <table>
+        <form action="" method="post">
+            <tr>
+               <td>a =</td>
+               <td>
+                <input type="text" id="a" >
+               </td> 
+            </tr>
+            <tr>
+                <td> b =</td>
+                <td>
+                 <input type="text" id="b" >
+                </td> 
+             </tr>
+             <tr>
+                <td>c =</td>
+                <td>
+                 <input type="text" id="c" >
+                </td> 
+             </tr>
+             <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="Giải" onclick="PTB2()">
+                    <input type="reset" value="Reset">
+                </td> 
+             </tr>
+        </form>
+    </table>
+    <div>
+    <p id="pt"></p>
+    <p id="x1"></p>
+    <p id="x2"></p>
+    </div>
+    <script>
+        function PTB2()
+        {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            var delta,x1,x2,xx1,xx2;
+            delta = (b*b - 4*a*c);
+            a = parseInt(a)
+            b = parseInt(b)
+            c = parseInt(c)
+            if(delta==0)
+            {
+                document.getElementById("pt").innerHTML="Phương trình có nghiệm kép là: ";
+                xx1= -b/(2*a);
+                xx2= -b/(2*a);
+                x1=xx1.toFixed(2);
+                x2=xx2.toFixed(2);
+                document.getElementById("x1").innerHTML="x1 = " + x1;
+                document.getElementById("x2").innerHTML="x1 = " + x2;
+            }
+            else if(delta <0)
+            {
+                document.getElementById("pt").innerHTML="Phương trình vô nghiệm ! ";
+            }
+            else
+            {
+                document.getElementById("pt").innerHTML="Phương trình có 2 nghiệm là: "
+                 xx1 = (-b+Math.sqrt(delta))/(2*a);
+                 xx2 = (-b-Math.sqrt(delta))/(2*a);
+                 x1=xx1.toFixed(2);
+                 x2=xx2.toFixed(2);
+                 document.getElementById("x1").innerHTML="x1 = " + x1;
+                document.getElementById("x2").innerHTML="x1 = " + x2;
+            }
+        }
+    </script>
+</body>
+</html>

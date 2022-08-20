@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .shadow{
+        text-shadow: 3px 3px 3px black;
+        display: flex;
+        padding-top: 7px;
+        justify-content: center;
+      }
+      .banner{
+        height: 30px;
+        width: 100%;
+        animation: color 10s ease infinite;
+        background-color: violet;
+      }
+      @keyframes color{
+        0% {
+        background: violet;
+        font-size: small;
+        }
+        14.3% {
+            background: indigo;
+            font-size: small;
+        }
+        28.6% {
+            background: blue;
+            font-size: medium;
+        }
+        42.9% {
+            background: green;
+            font-size: medium;
+        }
+        57.2% {
+            background: yellow;
+            font-size: medium;
+        }
+        71.5% {
+            background: orange;
+            font-size: medium;
+        }
+        85.8% {
+            background: red;
+            font-size: large;
+        }
+        100% {
+            background: violet;
+            font-size: large;
+        }
+      }  
+      .body{
+        display:flex;
+        justify-content: space-around;
+        text-align: center;
+      }
+      .body>div{
+        color: yellow;
+        font-size: 40px;
+      }
+      @keyframes picture
+    {
+        form{background: url(image/pointlobos.jpg) center/cover no-repeat;}
+        to {background: url(image/3.jpg) center/cover no-repeat;}
+      }
+      @keyframes rotate{
+        form{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+      }
+      .pic1{
+        width: 150px;
+        height: 150px;
+        border: 3px solid red;
+        background: url(image/pointlobos.jpg) center/cover no-repeat;
+        animation: picture 5s ease infinite;
+      }
+      .pic2{
+        width: 150px;
+        height: 150px;
+        background-color: aqua;
+        border: 3px dashed blue;
+        border-radius: 0px 40px 0 40px;
+      }
+      .pic3
+      {
+        width: 150px;
+        height: 150px;
+        background-color: aqua;
+        border: 3px dotted purple;
+       border-radius: 40px 0px 40px 0px;
+      }
+      .pic4{
+        width: 150px;
+        height: 150px;
+        background-color: #104b10;
+        border: 3px solid yellow;
+        animation: rotate infinite 10s linear;
+      }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <b class="shadow"> BANNER</b>
+    </div>
+    <br> <br>
+    <div class="body">
+        <div class="pic1"><p>1</p></div>
+        <div class="pic2"><p>2</p></div>
+        <div class="pic3"><p>3</p></div>
+        <div class="pic4"><p>Rolate</p></div>
+    </div>
+</body>
+</html>

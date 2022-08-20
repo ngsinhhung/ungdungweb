@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ 05</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("img").
+            mouseover(function() {
+                $(this).attr("src","/JQ/dog.jpg")
+                .animate({
+                    width: "+=200px",
+                    height:"+=200px"
+                });
+            });
+            $("img").mouseout(function() {
+                $(this).attr("src","/JQ/ga.jpg")
+                .animate({
+                    width:"-=200px",
+                    height:"-=200px"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="/JQ/ga.jpg">
+</body>
+</html>

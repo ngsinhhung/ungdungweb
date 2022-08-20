@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS10</title>
+    <script>
+        function change() {
+            var color1 = document.getElementById("mauchu").value;
+            var color2 = document.getElementById("maunen").value;
+            var text = document.getElementById("text").value;
+            var change = document.getElementById("content-1");
+            change.innerHTML = text;
+            change.style.backgroundColor = color1;
+            change.style.color = color2;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <h1 id="content-1">Can you type your text ?</h1>
+        <label> Nhập nội dung </label>
+        <input type="text" placeholder="typing....." id="text">
+        <br><br>
+        <label> Màu nền </label>
+        <input type="color" id="maunen" name="body" value="#f6b73c">
+        <br><br>
+        <label> Màu chữ </label>
+        <input type="color" id="mauchu" name="body" value="#f6b73c">
+        <br><br>
+        <input type="button" value="Thực hiện" onclick="change()" />
+    </div>
+</body>
+</html>
